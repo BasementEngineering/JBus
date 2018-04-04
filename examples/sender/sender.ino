@@ -21,7 +21,7 @@
 
 #include "JBus.h"
 
-const unsigned int CUSTOM_TIMEOUT(10000000); //Optional, default is 6000000
+const unsigned long CUSTOM_TIMEOUT = 10000000; //Optional, default is 6000000
 const uint8_t REQUEST_PIN = 2;
 const uint8_t DATA_PIN = 3;
 

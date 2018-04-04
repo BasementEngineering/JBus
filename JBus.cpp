@@ -5,7 +5,7 @@
 *The JBus can work with any pin on an Arduino board, that can be used as a digital output.
 *It is furthermore possible to set the response timeout in microseconds, the default value is 6000000 or 6 seconds.
 */
-JBus::JBus(uint8_t requestPin, uint8_t dataPin, unsigned int responseTimeout) 
+JBus::JBus(uint8_t requestPin, uint8_t dataPin, unsigned long responseTimeout) 
 {
   _requestLine = requestPin;
   _dataLine = dataPin;
@@ -44,7 +44,7 @@ byte JBus::read(bool &success) const
 *
 *Same as read(bool success) without a success indication. 
 */
-byte JBus::read() const
+byte JBus::read(void) const
 {
 	bool unused;
   return read(unused);

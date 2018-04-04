@@ -15,18 +15,18 @@ This allows the receiving MCU to manage other functions until it has time to lis
 
 class JBus{
   public:
-  JBus(uint8_t requestPin, uint8_t dataPin, unsigned int responseTimeout = 6000000);
+  JBus(uint8_t requestPin, uint8_t dataPin, unsigned long responseTimeout = 6000000 );
 
   bool requestAvailable(void) const;
   bool write(byte message) const;
-  byte read() const;
+  byte read(void) const;
   byte read(bool &success) const;
   
 
   private:
   uint8_t _requestLine;
   uint8_t _dataLine;
-  unsigned int _responseTimeout;
+  unsigned long _responseTimeout;
   
   void sendReadyMessage(void) const;
   byte decodeByte(bool &success) const;
